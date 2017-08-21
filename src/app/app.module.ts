@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -8,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 
 
 import { FoodService } from './services/food.service';
+import { PersonService } from './services/person.service';
+
 import { AboutComponent } from './components/about/about.component';
 import { PersonsComponent } from './components/persons/persons.component';
 import { PersonComponent } from './components/person/person.component';
@@ -45,9 +48,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    BrowserModule
+    BrowserModule,HttpModule
   ],
-  providers: [FoodService],
+  providers: [FoodService,PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
