@@ -1,3 +1,4 @@
+import { TasteService } from './services/taste.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,11 +19,15 @@ import { FoodItemsComponent } from './components/food-items/food-items.component
 import { FoodItemComponent } from './components/food-item/food-item.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PartiesComponent } from './components/parties/parties.component';
+import { TastesComponent } from './components/tastes/tastes.component';
+import { TasteDetailsComponent } from './components/taste-details/taste-details.component';
 
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'parties', component: PartiesComponent },
+  { path: 'tastes',      component: TastesComponent },
+  { path: 'tastes/:id',      component: TasteDetailsComponent },
   { path: 'friends',      component: PersonsComponent },
   { path: 'friend/:id',      component: PersonComponent },
   { path: 'food-items', component: FoodItemsComponent },
@@ -41,7 +46,9 @@ const appRoutes: Routes = [
     FoodItemsComponent,
     FoodItemComponent,
     PageNotFoundComponent,
-    PartiesComponent
+    PartiesComponent,
+    TastesComponent,
+    TasteDetailsComponent
   ],
   imports: [
     RouterModule.forRoot(
