@@ -1,6 +1,5 @@
 import { BaseEntity } from './BaseEntity';
-export class Taste {
-    id: number;
+export interface Taste extends BaseEntity {
     name: string;
     description: string;
 }
