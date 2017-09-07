@@ -1,9 +1,10 @@
 import { TasteService } from './services/taste.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {InlineEditorModule} from 'ng2-inline-editor';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -55,9 +56,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    BrowserModule,HttpModule
+    BrowserModule,HttpModule,FormsModule,InlineEditorModule
   ],
-  providers: [FoodService,PersonService],
+  providers: [FoodService,PersonService,TasteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
