@@ -1,0 +1,31 @@
+<div *ngIf="isEdit" >
+  Edit Taste
+</div>
+
+<!-- <div *ngIf="!isEdit" >
+  Add Taste
+</div> -->
+
+<div *ngIf="taste" class="card">
+  <div class="card-header">
+    <form (submit)="onEditClicked()">
+      <div> Taste ID: {{taste.id}}</div> <h5>{{taste.name}}</h5>
+    </form>
+  </div>
+  
+  <div class="card-block">
+    <div class="row">
+      <label for="name">Name:  </label>
+      <inline-editor type="text"  [(ngModel)]=" taste.name" (onSave)="saveEditable($event)" 
+            name="name" size="20"></inline-editor> 
+    </div>       
+
+    <div class="row"> 
+          <label for="description">Description: </label>
+          <inline-editor type="text" [(ngModel)]=" taste.description" (onSave)="saveEditable($event)" 
+            name="description" size="20"></inline-editor>
+    </div>
+  </div>
+
+</div>
+

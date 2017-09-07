@@ -1,0 +1,26 @@
+<p>
+  tastes works!
+</p>
+<table *ngIf="tastes?.length > 0;else noTastes" class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let taste of tastes">
+      <td>{{taste.id}}</td>
+      <td>{{taste.name}}</td>
+      <td>{{taste.description}}</td>
+      <td><a [routerLink]="['/tastes/'+taste.id]" href="" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noTastes>
+  <hr>
+  <h5>There are no tastes in the system</h5>
+</ng-template>
